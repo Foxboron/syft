@@ -56,7 +56,7 @@ func encodeExternalReferences(p pkg.Package) *[]cyclonedx.ExternalReference {
 						URL:  "",
 						Type: cyclonedx.ERTypeBuildMeta,
 						Hashes: &[]cyclonedx.Hash{{
-							Algorithm: cyclonedx.HashAlgoSHA1,
+							Algorithm: cyclonedx.HashAlgorithm(digest.Algorithm),
 							Value:     digest.Value,
 						}},
 					})
