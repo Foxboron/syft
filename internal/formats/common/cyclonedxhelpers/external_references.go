@@ -100,7 +100,7 @@ func decodeExternalReferences(c *cyclonedx.Component, metadata interface{}) {
 		ref := findExternalRef(c, cyclonedx.ERTypeBuildMeta)
 		for _, hash := range *ref.Hashes {
 			digests = append(digests, syftFile.Digest{
-				Algorithm: fmt.Sprintf("%v", hash.Algorithm),
+				Algorithm: hash.Algorithm,
 				Value:     hash.Value,
 			})
 		}
